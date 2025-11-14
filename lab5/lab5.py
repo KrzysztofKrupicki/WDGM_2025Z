@@ -12,11 +12,9 @@ print("format", im.format)
 print("rozmiar", im.size)
 """ === === === Zadanie 1 === === === 
 Pobierz statystyki obrazu im i je skomentuj
-a. przedstaw histogram obrazu im na diagramie plt, przedstaw histogramy wszystkich jego kanałów na
-diagramach plt.
-b. Ile jest pikseli o wartości 155 na każdym z kanałów?
-c. Napisz funkcję zlicz_piksele(obraz, kolor), która zlicza, ile jest pikseli w danym kolorze. Ile jest pikseli
-o wartości [155,155,155] w obrazie im?
+    a. przedstaw histogram obrazu im na diagramie plt, przedstaw histogramy wszystkich jego kanałów na diagramach plt.
+    b. Ile jest pikseli o wartości 155 na każdym z kanałów?
+    c. Napisz funkcję zlicz_piksele(obraz, kolor), która zlicza, ile jest pikseli w danym kolorze. Ile jest pikseli o wartości [155,155,155] w obrazie im?
 """
 
 
@@ -42,17 +40,13 @@ def rysuj_histogram_RGB(obraz):
 
 
 rysuj_histogram_RGB(im)
-"""
-b. Ile jest pikseli o wartości 155 na każdym z kanałów?
-"""
+
+
 im_histogram = im.histogram()
 print(f'Kanał R: {im_histogram[155]}')
 print(f'Kanał G: {im_histogram[155 + 256]}')
 print(f'Kanał B: {im_histogram[155 + 2 * 256]}')
 print('\n')
-"""
-c. Napisz funkcję zlicz_piksele(obraz, kolor), która zlicza, ile jest pikseli w danym kolorze. Ile jest pikseli o wartości [155,155,155] w obrazie im?
-"""
 
 
 def zlicz_piksele(obraz, kolor):
@@ -77,8 +71,7 @@ def statystyki(im):
 """ === === === Zadanie 2 === === === 
 Zapisz obraz im w formacie jpg a potem wczytaj jako im_jpg.
     a. Porównaj statystyki obrazów im oraz im_jpg. Dla czego te obrazy się różnią?
-    b. Zastosuj ImageChops.difference, aby otrzymać różnicę tych obrazów. Pobierz statystyki różnicy i je
-    skomentuj
+    b. Zastosuj ImageChops.difference, aby otrzymać różnicę tych obrazów. Pobierz statystyki różnicy i je skomentuj
     c. Jak zmienią się statystyki, gdy jeszcze dwa razy zapiszesz obraz im_jpg w formacie jpg?
 """
 im_jpg = Image.open('obraz.jpg')
@@ -134,9 +127,7 @@ im_g = Image.fromarray(t_g)
 im_b = Image.fromarray(t_b)
 im1 = Image.merge("RGB", (im_r, im_g, im_b))
 diff = ImageChops.difference(im, im1)
-"""
-c. Umieść na jednej figurze plt (fig1.png) obrazy im, im1 i wynik porównania
-"""
+
 plt.figure(figsize=(16, 12))
 plt.subplot(2, 2, 1)
 plt.title("Oryginalny obraz - im")
@@ -153,9 +144,7 @@ plt.imshow(diff)
 plt.subplots_adjust(wspace=0.05, hspace=0.05)
 plt.savefig('fig1.png')
 plt.show()
-"""
-d. Czy są jakieś różnice?
-"""
+
 print(f'===== Statystyki różnic =====')
 statystyki(diff)
 """
