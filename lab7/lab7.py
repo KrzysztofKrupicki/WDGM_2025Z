@@ -251,17 +251,17 @@ def transformacja_gamma_lista(obraz, gamma):
     return obraz.point(lista)
 
 
-im_gamma_lista_08 = transformacja_gamma_lista(obraz, 0.8)
-im_gamma_08 = transformacja_gamma(obraz, 0.8)
+im_gamma_lista_05 = transformacja_gamma_lista(obraz, 0.5)
+im_gamma_05 = transformacja_gamma(obraz, 0.5)
 plt.figure(figsize=(10, 16))
 plt.subplot(2, 1, 1)
-plt.title("transformacja gamma: 0.8")
+plt.title("transformacja gamma: 0.5")
 plt.axis('off')
-plt.imshow(im_gamma_08)
+plt.imshow(im_gamma_05)
 plt.subplot(2, 1, 2)
-plt.title("transformacja gamma lista: 0.8")
+plt.title("transformacja gamma lista: 0.5")
 plt.axis('off')
-plt.imshow(im_gamma_lista_08)
+plt.imshow(im_gamma_lista_05)
 plt.subplots_adjust(wspace=0, hspace=0.1)
 plt.savefig('fig41.png')
 
